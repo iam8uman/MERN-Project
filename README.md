@@ -10,4 +10,4 @@ Welcome to the MERN Project Repository! This repository houses various MERN stac
 
 - **Technologies Used**: MongoDB, Express.js, React, Node.js, Redux, CSS, etc.
 
-- **Project Directory**: [./ecommerce-app](./ecommerce-app)
+- **Project Directory**: [./ecommerce-app](./E-commerse)
