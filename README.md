@@ -27,4 +27,5 @@ Each project has its own directory within this repository. To get started with a
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/MERN-project.git
+   git clone https://github.com/iam8uman/MERN-project.git
+   
