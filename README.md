@@ -12,7 +12,7 @@ Welcome to the MERN Project Repository! This repository houses various MERN stac
 
 - **Project Directory**: [./ecommerce-app](./E-commerse)
 
-- ### Cryptocurrency App
+### Cryptocurrency App
 
 - **Description**: The cryptocurrency app is a MERN stack application that provides real-time cryptocurrency market data, including prices, charts, and news. It allows users to track their favorite cryptocurrencies and stay updated with the latest trends.
 
