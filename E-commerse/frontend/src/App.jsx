@@ -8,8 +8,8 @@ function App() {
     <>
     <h1>Hello Nepal!</h1>
     <Navbar/>
-    <Home/>
-    <Footer/>
+    {/* <Home/> */}
+    {/* <Footer/> */}
     </>
   )
 }
