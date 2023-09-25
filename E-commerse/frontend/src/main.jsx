@@ -13,6 +13,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import User from "./components/User";
 import Github, {GithubInfoLoader} from "./components/Github";
+import Suman from './components/Suman'
 
 // const router = createBrowserRouter([
 //   {
@@ -32,7 +33,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route path="" element={<Home />} />
-      <Route path="about" element={<About />} />
+      <Route path="about" element={<About />} >
+        <Route path="suman" element={<Suman/>}/>
+      </Route>
       <Route path="contact" element={<Contact />} />
       <Route path="user/:userid" element={<User />} />
       <Route loader={
