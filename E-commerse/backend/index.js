@@ -1,14 +1,21 @@
 // console.log("Hello world")
 
-const express=require('express')
+const express = require("express");
+const app = express();
 
-const app=express();
+require("./dB/config");
+const Users = require("./dB/users");
 
-app.get('/',(req,res)=>{
-    res.send("Hello home page k xa halkhabar")
-})
+//middleware
+app.use(express.json());
 
-const PORT=8080;
-app.listen(PORT,()=>{
- console.log(`Server listening the to the PORT=${PORT}`)
-})
+app.post("/register", async (req, res) => {
+  let user = new Users(req.body);
+  let result = await user.save();
+  res.send(result);
+});
+
+const PORT = 8080;
+app.listen(PORT, () => {
+  console.log(`Server listening the to the PORT=${PORT}`);
+});
