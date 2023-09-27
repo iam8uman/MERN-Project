@@ -3,7 +3,7 @@
 const express = require("express");
 const app = express();
 
-require("./dB/config");
+// require("./dB/config");
 const Users = require("./dB/users");
 
 //middleware
