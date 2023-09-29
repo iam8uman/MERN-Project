@@ -1,5 +1,3 @@
-// console.log("Hello world")
-
 const express = require("express");
 const app = express();
 
@@ -15,7 +13,7 @@ app.post("/register", async (req, res) => {
   res.send(result);
 });
 
-const PORT = 8080;
+const PORT = 8000;
 app.listen(PORT, () => {
   console.log(`Server listening the to the PORT=${PORT}`);
 });
