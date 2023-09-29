@@ -1,7 +1,19 @@
 const mongoose = require("mongoose");
-MONGO_URL = process.env.MONGO_URL;
+require('dotenv').config(); 
 
-mongoose.connect(MONGO_URL,{
-  userNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+
+//connect to db
+const connectDB= async()=>{
+  console.log(URL)
+  try{
+    await mongoose.connect(process.env.MONGO_URL,{
+      useUnifiedTopology: true,
+    })
+    console.log("Connected to the db");
+  }catch(err){
+    console.log(`ERROOR:`+ err);
+  }
+};
+
+connectDB();
+
