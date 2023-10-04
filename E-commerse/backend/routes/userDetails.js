@@ -7,11 +7,10 @@ const router=express.Router();
 const Users = require("../models/users");
 
 // post route 
-router.post("/register", async (req,res)=>{
-    const user = new Users(req.body);
-    res.send(user);
-    // const createUser = await user.save();
-    // res.send(createUser);
+router.get("/details", async (req,res)=>{
+   //fetch data from database and show here 
+   const userDetails = await Users.find();
+   res.send(userDetails)
 })
 
 // export routes
