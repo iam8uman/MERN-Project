@@ -1,16 +1,33 @@
-import { useState } from "react";
+import { useState,useNavigate } from "react";
 
 export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const navigate = useNavigate();
 
-const SubmitData=()=>{
-    console.log(name,email,pass);
-}
-const handleSubmit = async (event) => {
+
+  const SubmitData = () => {
+    console.log(name, email, pass);
+  };
+  const handleSubmit = async (event) => {
     event.preventDefault();
-}
+    let response = await fetch("http://localhost:8000/users/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, pass }),
+    });
+    response = await response.json();
+
+    // dB ma user Data save vayo vane home page ma navigate garna
+    if(response)
+    {
+      localStorage.setItem('userInfo',JSON.stringify(response))
+      navigate('/')
+    }
+
+
+  };
 
   return (
     <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
@@ -97,8 +114,11 @@ const handleSubmit = async (event) => {
                 </div>
               </div>
             </div>
-
-            <form className="p-6 flex flex-col justify-center" onSubmit={handleSubmit}>
+    {/* // form component start  */}
+            <form
+              className="p-6 flex flex-col justify-center"
+              onSubmit={handleSubmit}
+            >
               <div className="flex flex-col">
                 <label htmlFor="name" className="hidden">
                   Full Name

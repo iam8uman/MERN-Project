@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-  
 
 //define schema
 const usersSchema = new mongoose.Schema({
@@ -8,8 +7,7 @@ const usersSchema = new mongoose.Schema({
   pass: String,
 });
 
-
-// create model 
+// create model
 const users = mongoose.model("users", usersSchema);
 
 module.exports = users;

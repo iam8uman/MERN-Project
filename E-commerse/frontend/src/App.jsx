@@ -8,6 +8,9 @@ import Signup from "./components/Signup";
 import Root from "./routes/root";
 
 function App() {
+  // localstorage bata data nikalna
+  const data = localStorage.getItem("userInfo");
+
   return (
     <>
       {/* <Outlet vitra ko kura matra xa yeha /> */}
@@ -16,9 +19,13 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="add" element={<AddProduct />} />
           <Route path="update" element={<UpdateProduct />} />
-          <Route path="logout" element={<Logout />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="signup" element={<Signup />} />
+          
+          {data ? (
+            <Route path="logout" element={<Logout />} />
+          ) : (
+            <Route path="signup" element={<Signup />} />
+          )}
         </Route>
       </Routes>
     </>

@@ -10,7 +10,11 @@ const Users = require("../models/users");
 router.get("/details", async (req,res)=>{
    //fetch data from database and show here 
    const userDetails = await Users.find();
-   res.send(userDetails)
+   res.send("Hello")
+// if(!userDetails)
+// {
+//     res.send("No data found")
+// }
 })
 
 // export routes

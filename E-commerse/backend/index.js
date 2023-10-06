@@ -8,13 +8,13 @@ app.use(cors());
 
 
 
-// post api
+// register api
 const userRouter = require("./routes/users");
 app.use("/users", userRouter);
 
 // get api 
 const userDetails = require("./routes/userDetails");
-app.use("/usersDetails", userDetails)
+app.use("/users", userDetails)
 
 const PORT = 8000;
 app.listen(PORT, () => {
