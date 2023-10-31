@@ -25,5 +25,5 @@
 // const Upper = msg.toLowerCase()
 // console.log(Upper)
 
-let Ktakti= 5;
-Ktakti="halla nagar"
+// let Ktakti= 5;
+// Ktakti="halla nagar"
