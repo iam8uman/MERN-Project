@@ -11,7 +11,7 @@ class AuthService {
   }
 
   async createAccount({ email, password, name }) {
-    const userAccount = await this.Account.create(
+    const userAccount = await this.account.create(
       ID.unique(),
       email,
       password,
@@ -19,6 +19,7 @@ class AuthService {
     );
     if (userAccount) {
       //call another method
+      return this.login({email,password})
 
     } else {
       return userAccount;
@@ -26,14 +27,29 @@ class AuthService {
   }
 
   async login({ email, password }) {
-    const userAccount = await Account.createEmailSession(email, password);
-    if (userAccount) {
-      //call another method
+    return await this.account.createEmailSession(email, password);
+  }
 
-    } else {
-      return userAccount;
+  async getCurrentUser(){
+    try {
+      await this.account.get();
+    } catch (error) {
+      // return error;
+      console.log(error)  ;
+      
+    }
+    return null;
+  }
+
+  async logout(){
+    try {
+      return await this.account.deleteSessions();
+      
+    } catch (error) {
+      console.log(error)
     }
   }
+
 }
 
 // object of authService
