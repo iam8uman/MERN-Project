@@ -85,7 +85,7 @@ export class Services {
     }
   } 
 
-  // get all posts
+  // get all posts baki xa yo kam voli lai
     async getAllPosts(query=[Query.equal("status", "active")]) {
         try {
         return await this.databases.listDocuments(
