@@ -1,5 +1,5 @@
 import config from "../config/config";
-import { Client, Account, ID, Databases, Query, Storage } from "appwrite";
+import { Client, ID, Databases, Query, Storage } from "appwrite";
 
 export class Services {
   client = new Client();
@@ -26,11 +26,10 @@ export class Services {
           createdAt: new Date().getTime(),
           updatedAt: new Date().getTime(),
         },
-        ["*"],
-        ["*"]
+
       );
     } catch (error) {
-      console.log(error);
+      console.log("error occoured in :: createPost", error);
     }
   }
 
@@ -49,11 +48,9 @@ export class Services {
           status,
           updatedAt: new Date().getTime(),
         },
-        ["*"],
-        ["*"]
       );
     } catch (error) {
-      console.log(error);
+      console.log("error occoured in :: updatePost", error);
     }
   }
 
@@ -67,7 +64,7 @@ export class Services {
       );
       return true;
     } catch (error) {
-      console.log(error);
+      console.log("Error occoured in :: deletePost", error);
       return false;
     }
   }
@@ -81,7 +78,7 @@ export class Services {
         slug
       );
     } catch (error) {
-      console.log(error);
+      console.log("Error occoured in :: getPost", error);
     }
   } 
 
@@ -94,9 +91,46 @@ export class Services {
             query,
         );
         } catch (error) {
-        console.log(error);
+        console.log("error occoured in :: getAllPosts", error);
         return false
         }
+    }
+
+    // upload fiiles
+    async uploadFile(file){
+      try {
+        return await this.bucket.createFile(
+          config.appwriteBID,
+          ID.unique(),
+          file,
+        )
+        
+      } catch (error) {
+        console.log("Error occoured in :: uploadFile", error)
+        return false;
+      }
+    }
+
+    // delete file
+    async deleteFile(fileID){
+      try {
+        return await this.bucket.deleteFile(
+          config.appwriteBID,
+          fileID,
+          )
+      } catch (error) {
+        console.log("Error occoured in :: deleteFile", error)
+        return false;
+        
+      }
+    }
+
+    // get file preview
+    getFilePreview(fileID){
+      return this.bucket.getFilePreview(
+        config.appwriteBID,
+        fileID,
+      )
     }
 }
 
