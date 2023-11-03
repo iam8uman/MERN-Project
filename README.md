@@ -29,4 +29,6 @@ Each project has its own directory within this repository. To get started with a
 
    ```bash
    git clone https://github.com/iam8uman/MERN-project.git
+
+   Thank You
    
