@@ -4,12 +4,16 @@ export default function Home() {
   return (
    // data fetching in next.js
 
-
-
-   let res = await fetch('https://.../posts');
-
-   if(res.status === 200){
-     const posts = await res.json();
-     console.log(posts);
-  )
+   async function getData() {
+    const res = await fetch('https://api.example.com/...')
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+   
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error('Failed to fetch data')
+    }
+   
+    return res.json()
+  }
 }
