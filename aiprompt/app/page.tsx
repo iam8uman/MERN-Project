@@ -12,6 +12,7 @@ const Home = () => (
       discover, create and share creative prompts
     </p>
 
+  {/* feed component */}
     <Feed />
   </section>
 );
