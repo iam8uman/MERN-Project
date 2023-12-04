@@ -9,6 +9,8 @@ const url = `${process.env.ENDPOINT}`;
   // instantiating a graphql client...
 const graphConnect = new GraphQLClient(url);
 
+// console.log(graphConnect)
+
 const query = gql`
   query {
     blogposts {
