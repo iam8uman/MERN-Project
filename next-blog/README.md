@@ -41,3 +41,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 --------- for now i can only do this -----------
 
+after this  i have to connect and save the posted data to the hygraph database of mongoose 
