@@ -3,7 +3,7 @@ interface User {
     id: number;
   }
    
-  class UserAccount {
+  className UserAccount {
     name: string;
     id: number;
    

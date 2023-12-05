@@ -8,7 +8,7 @@ dependencies:
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.38)(react@18.2.0)
-  class-variance-authority:
+  className-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
   clsx:
@@ -661,7 +661,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  /class-variance-authority@0.7.0:
+  /className-variance-authority@0.7.0:
     resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
     dependencies:
       clsx: 2.0.0

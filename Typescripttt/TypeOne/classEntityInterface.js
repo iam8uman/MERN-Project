@@ -1,4 +1,4 @@
-var UserAccount = /** @class */ (function () {
+var UserAccount = /** @className */ (function () {
     function UserAccount(name, id) {
         this.name = name;
         this.id = id;

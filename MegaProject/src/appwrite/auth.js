@@ -1,7 +1,7 @@
 import config from "../config/config";
 import { Client, Account, ID } from "appwrite";
 
-class AuthService {
+className AuthService {
    client = new Client();
    account;
 
