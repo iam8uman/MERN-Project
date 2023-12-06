@@ -36,4 +36,4 @@ Each project has its own directory within this repository. To get started with a
    What i have done today?
    1. I write a job application letter for a software company.
    2. I also write a internship opportunity application letter for US Embassy Nepal.
-   3. 
+   3. I also connect with one of my friend for a meetup for next saturday and talk about our carrier and future.
